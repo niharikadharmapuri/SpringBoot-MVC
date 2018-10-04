@@ -27,27 +27,25 @@ public class VehicleServiceImpl implements VehicleService {
     public Vehicle findOne(String vin) {
         Optional<Vehicle> existing =repository.findById(vin); // crudrepository returns optional
         if(!existing.isPresent()){
-            throw new ResourceNotFoundException("Vehicle with "+vin+"doesnt exist");
+            throw new ResourceNotFoundException("Vehicle with "+vin+"doesn't exist");
         }
         return existing.get(); //extract the vehicle from optional and return it
     }
+    @Transactional
+    public List<Vehicle> update(List<Vehicle> vList) {
 
-    @Transactional(readOnly = true)
+        return (List<Vehicle>) repository.saveAll(vList);
+    }
+
+
+
+
+
+    @Transactional
     public Vehicle create(Vehicle emp) {
         return repository.save(emp);
     }
-
-    @Transactional(readOnly = true)
-    public Vehicle update(String vin, Vehicle emp) {
-        Optional<Vehicle> existing =repository.findById(vin); // same function as for findById
-        if(!existing.isPresent()){
-            throw new ResourceNotFoundException("Vehicle with "+vin+"doesnt exist");
-        }
-        return repository.save(emp);  // then save
-
-    }
-
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(String vin) {
         Optional<Vehicle> existing =repository.findById(vin); // find the vehicle using the id
         if(!existing.isPresent()){

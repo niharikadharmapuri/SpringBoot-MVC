@@ -12,7 +12,7 @@ public interface VehicleService {
 
     Vehicle create(Vehicle emp);
 
-    Vehicle update(String id, Vehicle emp);
+    Iterable<Vehicle> update(List<Vehicle> vList);
 
     void delete(String id);
 }
