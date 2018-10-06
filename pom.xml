@@ -67,7 +67,7 @@
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+
 
 
         <dependency>
@@ -168,8 +168,8 @@
                     </resources>
                 </configuration>
             </plugin>
-
         </plugins>
+        <finalName>spring-boot-mvc</finalName>
     </build>
 
 </project>
