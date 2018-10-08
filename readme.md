@@ -2,7 +2,7 @@
 This project is an implementation of MVC(Model View Controller) model.
 
 # Using Amazon RDS:
-        create an data base on Amazon RDS, use the endpoint for storing data for spring boot application.
+    create an data base on Amazon RDS, use the endpoint for storing data for spring boot application.
 # Running the SpringBoot application on EC2:
     create an EC2 instance on Amazon
     ssh form your local machine to the instance using:
@@ -20,7 +20,7 @@ This project is an implementation of MVC(Model View Controller) model.
     
 You can access the application at DNSaddress:8080/api (you can change the port in spring application if you want. )
 
-#Load balancing with nginx:
+# Load balancing with nginx:
     create a config file and add location and upsteam apiservers- add the ip addresses of the ec2 machines
     
 # Dockerize the application
